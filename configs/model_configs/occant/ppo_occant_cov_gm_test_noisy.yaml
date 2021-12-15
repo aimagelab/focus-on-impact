@@ -1,0 +1,56 @@
+BASE_TASK_CONFIG_PATH: "configs/exploration/mp3d_test_noise_free.yaml"
+TRAINER_NAME: "occant_exp"
+ENV_NAME: "ExpRLEnv"
+SIMULATOR_GPU_ID: 0
+SIMULATOR_GPU_IDS: []
+TORCH_GPU_ID: 0
+VIDEO_OPTION: []
+TENSORBOARD_DIR: "tb/foi/occant_cov/mp3d_test"
+VIDEO_DIR: "video_dir/foi/occant_cov/mp3d_test"
+TEST_EPISODE_COUNT: 2000
+EVAL_CKPT_PATH_DIR: "data/new_checkpoints/foi/occant_cov/ckpt.25.pth"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+T_EXP: 1000
+T_MAX: 1000
+DISTRIBUTED: True
+SAVE_STATISTICS_FLAG: True
+
+EVAL:
+  SPLIT: "test"
+  USE_CKPT_CONFIG: True
+
+RL:
+  PPO:
+    # ppo params
+    ppo_epoch: 4
+    num_mini_batch: 1
+  ANS:
+    image_scale_hw: [128, 128]
+    crop_map_for_planning: False
+    overall_map_size: 2001
+    local_reward_type: 'diff'
+    use_ddp: True
+    gpu_ids: [0]
+    use_gt_positioning: False
+    MAPPER:
+      map_size: 101
+      registration_type: 'moving_average'
+      label_id: 'ego_map_gt_anticipated'
+      ignore_pose_estimator: False  # <---
+      map_batch_size: 32
+      use_data_parallel: False
+      replay_size: 10000
+      gpu_ids: []
+    OCCUPANCY_ANTICIPATOR:
+      type: 'occant'
+      GP_ANTICIPATION:
+        resnet_type: 'resnet18'
+        unet_nsf: 16
+    LOCAL_POLICY:
+      use_heuristic_policy: False
+    GLOBAL_POLICY:
+      random_explorer: False
+
+PRELOAD_MAP: False
+QUALITATIVE: False

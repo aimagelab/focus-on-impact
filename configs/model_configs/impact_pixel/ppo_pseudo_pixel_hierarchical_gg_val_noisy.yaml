@@ -1,0 +1,78 @@
+BASE_TASK_CONFIG_PATH: "configs/exploration/gibson_evaluate_noise_free.yaml"
+TRAINER_NAME: "ppo_impact_hierarchical"
+ENV_NAME: "ExpRLEnv"
+SIMULATOR_GPU_ID: 0
+TORCH_GPU_ID: 0
+VIDEO_OPTION: []
+TENSORBOARD_DIR: "tb/foi/pseudo_pixel/gibson_val"
+VIDEO_DIR: "video_dir/foi/pseudo_pixel/gibson_val"
+TEST_EPISODE_COUNT: 2000
+EVAL_CKPT_PATH_DIR: "data/new_checkpoints/foi/pseudo_pixel/ckpt.25.pth"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+PRELOAD_MAP: False
+T_MAX: 1000
+T_EXP: 1000
+SAVE_STATISTICS_FLAG: True
+
+NUM_UPDATES: 10000
+LOG_INTERVAL: 1
+CHECKPOINT_INTERVAL: 100
+
+EVAL:
+  SPLIT: "val"
+  USE_CKPT_CONFIG: True
+
+RL:
+  PPO:
+    # ppo params
+    ppo_epoch: 4
+    num_mini_batch: 10
+    global_reward_type: 'impact'
+    visitation_count: 'pseudo'
+    DENSITY_MODEL:
+      num_buckets: 128
+      pixel_resized_dim: 42
+      img_channels: 1
+      causal_ksize: 7
+      gated_blocks: 2
+      hidden_feature_planes: 16
+      hidden_ksize: 1
+      out_feature_planes: 16
+      out_ksize: 1
+      c_decay: 0.1
+      lr: 0.001
+    global_reward_scale: 0.01
+  ANS:
+    use_ddp: True
+    image_scale_hw: [128, 128]
+    gpu_ids: [0]
+    use_gt_positioning: False
+    overall_map_size: 961 # gibson
+    visitation_count_divider: 5
+    obs_resized_dim: 42
+    CURIOSITY:
+      use_normalized_advantage: False
+      curiosity_hidden_size: 512
+      use_curiosity_rnn: False
+      num_concat_obs: 4
+      update_epochs: 1
+    MAPPER:
+      map_size: 101
+      map_batch_size: 32
+      replay_size: 10000 # very important otherwise it crasha
+      ignore_pose_estimator: False
+      pose_predictor_inputs: ['ego_map']
+      registration_type: 'moving_average'
+      label_id: 'ego_map_gt_anticipated'
+      use_data_parallel: False
+      gpu_ids: [0]
+    OCCUPANCY_ANTICIPATOR:
+      type: 'occant'
+      GP_ANTICIPATION:
+        resnet_type: 'resnet18'
+        unet_nsf: 16
+    LOCAL_POLICY:
+      use_heuristic_policy: False
+
+QUALITATIVE: False

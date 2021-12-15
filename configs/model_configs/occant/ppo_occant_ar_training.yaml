@@ -1,0 +1,46 @@
+BASE_TASK_CONFIG_PATH: "configs/exploration/gibson_train_w_ar.yaml"
+TRAINER_NAME: "occant_exp"
+ENV_NAME: "ExpRLEnv"
+SIMULATOR_GPU_ID: 0
+TORCH_GPU_ID: 0
+VIDEO_OPTION: ["tensorboard"]
+TENSORBOARD_DIR: "tb/foi/occant_ar"
+VIDEO_DIR: "video_dir/foi/occant_ar"
+NUM_PROCESSES: 2 # 40
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+CHECKPOINT_FOLDER: "data/new_checkpoints/foi/occant_ar"
+NUM_UPDATES: 10000
+T_EXP: 500
+T_MAX: 500
+CHECKPOINT_INTERVAL: 10
+
+RL:
+  PPO:
+    # ppo params
+    ppo_epoch: 4
+    num_mini_batch: 1 # 10
+  ANS:
+    # Uncomment this for anticipation reward
+    use_ddp: True
+    gpu_ids: [0]
+    reward_type: "map_accuracy"
+    image_scale_hw: [128, 128]
+    crop_map_for_planning: False
+    overall_map_size: 961
+    local_reward_type: 'diff'
+    MAPPER:
+      map_size: 101
+      registration_type: 'moving_average'
+      label_id: 'ego_map_gt_anticipated'
+      ignore_pose_estimator: False
+      map_batch_size: 32
+      use_data_parallel: False
+      replay_size: 10000
+      gpu_ids: [0]
+    OCCUPANCY_ANTICIPATOR:
+      type: 'occant_rgbd'
+      GP_ANTICIPATION:
+        resnet_type: 'resnet18'
+        unet_nsf: 16
+    LOCAL_POLICY:
+      use_heuristic_policy: False
