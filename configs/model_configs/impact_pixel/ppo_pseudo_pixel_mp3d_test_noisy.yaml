@@ -69,7 +69,7 @@ RL:
       use_data_parallel: False
       gpu_ids: [0]
     OCCUPANCY_ANTICIPATOR:
-      type: 'occant'
+      type: 'occant_rgbd'
       GP_ANTICIPATION:
         resnet_type: 'resnet18'
         unet_nsf: 16

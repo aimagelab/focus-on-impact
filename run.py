@@ -9,12 +9,7 @@ import errno
 import os
 import random
 import socket
-import sys
 import time
-
-sys.path.append('.')
-if os.path.exists('/m100/home/userexternal/flandi00/FD_baselines/environment/habitat-lab'):
-    sys.path.insert(0, '/m100/home/userexternal/flandi00/FD_baselines/environment/habitat-lab')
 
 import numpy as np
 import torch

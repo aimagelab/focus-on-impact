@@ -54,7 +54,7 @@ RL:
       use_data_parallel: False
       gpu_ids: []
     OCCUPANCY_ANTICIPATOR:
-      type: 'occant'
+      type: 'occant_rgbd'
 
 QUALITATIVE: False
 

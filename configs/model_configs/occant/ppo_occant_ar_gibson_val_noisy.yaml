@@ -44,7 +44,7 @@ RL:
       replay_size: 10000
       gpu_ids: []
     OCCUPANCY_ANTICIPATOR:
-      type: 'occant'
+      type: 'occant_rgbd'
       GP_ANTICIPATION:
         resnet_type: 'resnet18'
         unet_nsf: 16
@@ -53,5 +53,4 @@ RL:
     GLOBAL_POLICY:
       random_explorer: False
 
-PRELOAD_MAP: False
 QUALITATIVE: False
