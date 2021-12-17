@@ -28,7 +28,7 @@ RL:
     global_reward_type: 'impact'
     visitation_count: 'impact_pixel'
     DENSITY_MODEL:
-      num_buckets: 32
+      num_buckets: 128
       pixel_resized_dim: 42
       img_channels: 1
       causal_ksize: 7
