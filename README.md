@@ -7,6 +7,17 @@ __***Roberto Bigazzi***__, Federico Landi, Silvia Cascianelli, Lorenzo Baraldi, 
 
 ![](content/real_world.gif)
 
+If you find our code useful for your research, please cite our paper:
+#### Bibtex:
+```
+@article{bigazzi2021focus,
+  title={Focus on Impact: Indoor Exploration with Intrinsic Motivation},
+  author={Bigazzi, Roberto and Landi, Federico and Cascianelli, Silvia and Baraldi, Lorenzo and Cornia, Marcella and Cucchiara, Rita},
+  journal={arXiv preprint arXiv:2109.08521},
+  year={2021}
+}
+```
+
 ## Table of Contents
    1. [Abstract](#abstract)
    2. [Installation](#installation)
