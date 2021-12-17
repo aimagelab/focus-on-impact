@@ -44,27 +44,41 @@ The proposed exploration approach outperforms DRL-based competitors relying on i
     conda create -n focus_on_imp python=3.6 cmake=3.14.0
     source activate focus_on_imp
     ```
-    
-2. Install *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* and *[Habitat-Sim](https://github.com/facebookresearch/habitat-sim)* following the instructions in the respective repositories.
 
-3. Clone this repository and install requirements:
+2. Clone this repository:
     ```
     git clone --recursive https://github.com/aimagelab/focus-on-impact
     cd focus-on-impact
-    pip install -r requirements.txt
     ```
-    
-4. Download the scene datasets *[Gibson](https://github.com/StanfordVL/GibsonEnv#database)* and *[Matterport3D](https://niessner.github.io/Matterport/)* and store them in `data/scene_datasets/`.
-
-5. Download the exploration task datasets for *Gibson* and *Matterport3D* from *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)* repository and store them in `data/datasets/`.
-
-6. Download the navigation task datasets for *Gibson* from *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* repository and store them in `data/datasets/`.
  
-7. Install *[A* algorithm](https://github.com/srama2512/astar_pycpp)* used by the Planner:
+3. Install *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* and *[Habitat-Sim](https://github.com/facebookresearch/habitat-sim)* in the environments directory:
+   ```
+   cd environments/habitat-sim
+   python -m pip install -r requirements.txt
+   python setup.py install --headless --with-cuda
+   
+   cd ../habitat-lab
+   python -m pip install -r requirements.txt
+   python -m pip install -r habitat_baselines/rl/requirements.txt
+   python setup.py develop --all
+   
+   cd ../..
+   ```
+
+4. Install the requirements for this repository:
+   ```
+   python -m pip install -r requirements.txt
+   ```
+    
+5. Download the scene datasets *[Gibson](https://github.com/StanfordVL/GibsonEnv#database)* and *[Matterport3D](https://niessner.github.io/Matterport/)* and store them in `data/scene_datasets/`.
+
+6. Download the exploration task datasets for *Gibson* and *Matterport3D* from *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)* repository and store them in `data/datasets/`.
+
+7. Download the navigation task datasets for *Gibson* from *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* repository and store them in `data/datasets/`.
+ 
+8. Install *[A* algorithm](https://github.com/srama2512/astar_pycpp)* used by the Planner:
     ```
-    cd occant_utils
-    git clone https://github.com/srama2512/astar_pycpp
-    cd astar_pycpp
+    cd occant_utils/astar_pycpp
     make
     cd ../..
     ```
