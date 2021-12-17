@@ -32,7 +32,7 @@ If you find our code useful for your research, please cite our paper:
 In this work, we propose to train the model with a purely intrinsic reward signal to guide exploration, which is based on the impact of the robot's actions on its internal representation of the environment. So far, impact-based rewards have been employed for simple tasks and in procedurally generated synthetic environments with countable states. Since the number of states observable by the agent in realistic indoor environments is non-countable, we include a neural-based density model and replace the traditional count-based regularization with an estimated pseudo-count of previously visited states.
 
 <p align="center">
-<img src="content/architecture.png" width="90%"/>
+<img src="https://fdlandi.github.io/images/focus_on_impact.svg" width="90%"/>
 </p>
 
 The proposed exploration approach outperforms DRL-based competitors relying on intrinsic rewards and surpasses the agents trained with a dense extrinsic reward computed with the environment layouts. We also show that a robot equipped with the proposed approach seamlessly adapts to point-goal navigation and real-world deployment.
