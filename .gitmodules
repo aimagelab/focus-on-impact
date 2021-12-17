@@ -1,3 +1,9 @@
+[submodule "environments/habitat-sim"]
+	path = environments/habitat-sim
+	url = https://github.com/facebookresearch/habitat-sim/
+[submodule "environments/habitat-lab"]
+	path = environments/habitat-lab
+	url = https://github.com/facebookresearch/habitat-lab
 [submodule "occant_utils/astar_pycpp"]
 	path = occant_utils/astar_pycpp
-	url = git@github.com:srama2512/astar_pycpp.git
+	url = https://github.com/srama2512/astar_pycpp
