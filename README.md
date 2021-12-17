@@ -87,7 +87,7 @@ Pretrained weights of our models on 5 millions total frames.
 For instructions on the real-world deployment of the models please follow *[LocoNav](https://github.com/aimagelab/LoCoNav)* instructions.
 
 ## Acknowledgements
-This repository uses parts of *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* and *[Habitat-Sim](https://github.com/facebookresearch/habitat-sim)*. We also used *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)*[1] for some of the competitors, the *[ANS](https://github.com/devendrachaplot/Neural-SLAM)*-based[2] Mapper and the exploration task dataset.
+This repository uses parts of *[Habitat-Lab](https://github.com/facebookresearch/habitat-lab)* and *[Habitat-Sim](https://github.com/facebookresearch/habitat-sim)*. We also used *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)* [1] for some of the competitors, the *[ANS](https://github.com/devendrachaplot/Neural-SLAM)*-based [2] Mapper and the exploration task dataset.
 
 [1] Ramakrishnan S. K., Al-Halah Z., and Grauman K. *"Occupancy anticipation for efficient exploration and navigation"* In ECCV 2020.<br/>
 [2] Chaplot D. S., et al. *"Learning to explore using active neural slam"* In ICLR 2020.
