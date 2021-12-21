@@ -65,7 +65,8 @@ target/
 *.rdb
 
 # Pycharm
-.idea
+.idea/
+.idea/*
 
 # VS Code
 .vscode/

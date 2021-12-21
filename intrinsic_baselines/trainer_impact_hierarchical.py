@@ -1807,7 +1807,7 @@ class PPOTrainerImpactHierarchical(BaseRLTrainer):
 
         times_per_episode = deque(maxlen=100)
 
-        increm_json_save_path = f"{self.config.VIDEO_DIR}/incremental_statistics_ckpt_{checkpoint_index}.json"
+        increm_json_save_path = f"incremental_statistics_ckpt_{checkpoint_index}.json"
         if os.path.isfile(increm_json_save_path):
             with open(increm_json_save_path) as json_file:
                 increm_per_episode_statistics = json.load(json_file)
