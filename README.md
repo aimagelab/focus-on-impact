@@ -82,7 +82,7 @@ The proposed exploration approach outperforms DRL-based competitors relying on i
     make
     cd ../..
     ```
-9. Generate environment layout maps as specified in the instruction of *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)* repository. 
+9. Generate environment layout maps as specified in the instructions of *[Occupancy Anticipation](https://github.com/facebookresearch/OccupancyAnticipation)* repository. 
     
 ## Training
 In order to train a model for exploration you can run:
