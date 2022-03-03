@@ -10,11 +10,12 @@ __***Roberto Bigazzi***__, Federico Landi, Silvia Cascianelli, Lorenzo Baraldi, 
 If you find our code useful for your research, please cite our paper:
 #### Bibtex:
 ```
-@article{bigazzi2021focus,
+@article{bigazzi2022focus,
   title={Focus on Impact: Indoor Exploration with Intrinsic Motivation},
   author={Bigazzi, Roberto and Landi, Federico and Cascianelli, Silvia and Baraldi, Lorenzo and Cornia, Marcella and Cucchiara, Rita},
-  journal={arXiv preprint arXiv:2109.08521},
-  year={2021}
+  journal={IEEE Robotics and Automation Letters},
+  year={2022},
+  publisher={IEEE}
 }
 ```
 
