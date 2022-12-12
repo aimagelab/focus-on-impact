@@ -107,8 +107,8 @@ Pretrained weights of our models on 5 millions total frames.
 
 | Name              | Link                                                                                         |
 | ---               | ---                                                                                          |
-| Impact (Grid)     | *[Here](https://drive.google.com/file/d/1XpQxB6nZrDVH4C7c2XD9FWNZ7p7f6PMb/view?usp=sharing)* |
-| Impact (DME)      | *[Here](https://drive.google.com/file/d/1Kk4js6Dujadws-0FU0ng9pOIohzcySla/view?usp=sharing)* |
+| Impact (Grid)     | *[Here](https://ailb-web.ing.unimore.it/publicfiles/drive/RA-L%202021/ckpt.25_grid.pth)* |
+| Impact (DME)      | *[Here](https://ailb-web.ing.unimore.it/publicfiles/drive/RA-L%202021/ckpt.25_dme.pth)* |
 
 ## Real-World Deployment
 For instructions on the real-world deployment of the models please follow *[LocoNav](https://github.com/aimagelab/LoCoNav)* instructions.
